@@ -3,9 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Online Registration Form</title>
+        <title>Interactive Photo Gallery</title>
         <link rel="stylesheet" href="css/normalize.css">
         <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+
+
+        <link rel="stylesheet" href="css/normalize.css" />
+
+        <link rel="stylesheet" href="js/lightbox/lightbox.css" />
 
         <link rel="stylesheet" href="css/main.css" />
 
@@ -13,14 +18,54 @@
     </head>
     <body>
 
-         <header>Photo Gallery</header>
+        <header>
+
+
+        </header>
 
         
+        <section id="form_search">
+            <form action="index.html" method="post">
+
+                <input type="text" id="image_search" name="image_search"  value="Search" onfocus="if(this.value == 'Search') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Search'; }" >
 
 
-           
+            </form>
+        </section>
 
-        
+        <section id="photo_gallery">
+            <p id="imageMessage">No images correspond to your search.</p>
 
-    </body>
+
+                <ul id="imageGallery">
+                    <li><a href="photos/01.jpg" data-lightbox="photo-gallery" data-title="This is a picture of our farm.   Every fall we harvest the wheat.  The sky looks gorgeous."><img src="photos/thumbnails/01.jpg" alt="1 Photo Caption"></a></li>
+                    <li><a href="photos/02.jpg" data-lightbox="photo-gallery" data-title="Here is the picture near the lake behind the town.  The water looks very clear."><img src="photos/thumbnails/02.jpg" alt="2 Photo"></a></li>
+                    <li><a href="photos/03.jpg" data-lightbox="photo-gallery" data-title="This is above the forest.   Behind it, you can see Crater Lake."><img src="photos/thumbnails/03.jpg" alt="3 Photo"></a></li>
+                    <li><a href="photos/04.jpg" data-lightbox="photo-gallery" data-title="Here is another picture of the lake in the winter time.   The lake hasn't frozen over yet."><img src="photos/thumbnails/04.jpg" alt="4 Photo"></a></li>
+                    <li><a href="photos/05.jpg" data-lightbox="photo-gallery" data-title="My caption 5"><img src="photos/thumbnails/05.jpg" alt="5 Photo"></a></li>
+                    <li><a href="photos/06.jpg" data-lightbox="photo-gallery" data-title="My caption 6"><img src="photos/thumbnails/06.jpg" alt="6 Photo"></a></li>
+                    <li><a href="photos/07.jpg" data-lightbox="photo-gallery" data-title="My caption 7"><img src="photos/thumbnails/07.jpg" alt="7 Photo"></a></li>
+                    <li><a href="photos/08.jpg" data-lightbox="photo-gallery" data-title="My caption 8"><img src="photos/thumbnails/08.jpg" alt="8 Photo"></a></li>
+                    <li><a href="photos/09.jpg" data-lightbox="photo-gallery" data-title="My caption 9"><img src="photos/thumbnails/09.jpg" alt="9 Photo"></a></li>
+                    <li><a href="photos/10.jpg" data-lightbox="photo-gallery" data-title="My caption 10"><img src="photos/thumbnails/10.jpg" alt="10 Photo"></a></li>
+                    <li><a href="photos/11.jpg" data-lightbox="photo-gallery" data-title="My caption 11"><img src="photos/thumbnails/11.jpg" alt="11 Photo"></a></li>
+                    <li><a href="photos/12.jpg" data-lightbox="photo-gallery" data-title="My caption 12"><img src="photos/thumbnails/12.jpg" alt="12 Photo"></a></li>
+                </ul>
+   
+        </section>
+            <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+            <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+            <script src="js/lightbox/lightbox.min.js" type="text/javascript" charset="utf-8"></script>
+
+        <script>
+    lightbox.option({
+        'resizeDuration': 200,
+        'showImageNumberLabel': false,
+        'fitImagesInViewport': true,
+        'maxWidth': 800,
+        'wrapAround': true
+    })
+        </script>
+
+</body>
 </html>
