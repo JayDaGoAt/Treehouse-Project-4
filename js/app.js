@@ -7,21 +7,22 @@ function searchEvent() {
     var bImageVisible = false;
 
     $('#imageGallery li a').each(function () {
-        if ($searchBox.val() != "") {
+        if ($searchBox.val() !== "") {
             var dataString = $(this).attr("data-title");
-            if (dataString != null) {
+            if (dataString !== null) {
 
                 if (dataString.indexOf($searchBox.val()) != -1) {
-                    $(this).parent().show();
+                    $(this).parent().fadeIn(500);
                     bImageVisible = true;
                 }
                 else {
-                    $(this).parent().hide();
+                    $(this).parent().fadeOut(500);
                 }
             }
         }
         else {
-            $(this).parent().show();
+
+            $(this).parent().fadeIn(500);
             bImageVisible = true;
         }
     });
@@ -34,4 +35,5 @@ function searchEvent() {
     }
 }
 
-$searchBox.focus(searchEvent).keyup(searchEvent)
+$searchBox.focus(searchEvent).keyup(searchEvent);
+
